@@ -6,8 +6,8 @@ import org.windsurfers.dto.WeatherDto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class WheatherCalculator {
-    public WheatherCalculator() {
+public class WeatherCalculator {
+    public WeatherCalculator() {
     }
 
     WeatherDataDto calculateCityValue(WeatherDataDto weatherDataDto, String datetime) {
@@ -16,7 +16,9 @@ public class WheatherCalculator {
                         data.getTemp() > 5 && data.getTemp() < 35 &&
                         data.getWind_spd() > 5 && data.getWind_spd() < 18)
                 .collect(Collectors.toList());
-
+        if (filteredData.isEmpty()) {
+            return null;
+        }
         double cityValue = filteredData.stream()
                 .mapToDouble(data -> data.getTemp() * 3 + data.getWind_spd())
                 .sum();

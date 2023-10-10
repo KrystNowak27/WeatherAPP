@@ -9,6 +9,7 @@ import org.windsurfers.webclient.weather.WeatherClient;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 
 @Service
@@ -16,7 +17,7 @@ import java.util.List;
 public class WeatherService {
 
 
-    private final WheatherCalculator wheatherCalculator = new WheatherCalculator();
+    private final WeatherCalculator wheatherCalculator = new WeatherCalculator();
     private WeatherClient weatherClient;
 
     @Autowired
@@ -34,6 +35,7 @@ public class WeatherService {
 
         return allWeatherForCities.stream()
                 .map(weatherDataDto -> wheatherCalculator.calculateCityValue(weatherDataDto, datetime))
+                .filter(Objects::nonNull)
                 .max(Comparator.comparingDouble(WeatherDataDto::getCityValue))
                 .orElse(null);
     }
