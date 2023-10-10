@@ -5,12 +5,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.windsurfers.dto.WeatherDataDto;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static java.util.Arrays.stream;
 
 @Component
 @EqualsAndHashCode
@@ -22,6 +20,7 @@ public class WeatherClient {
     private RestTemplate restTemplate = new RestTemplate();
 
     public List<WeatherDataDto> getWeatherForCities(){
+
         List<WeatherDataDto>weatherDataDtos = new ArrayList<>();
 
         for(City city : City.values()) {

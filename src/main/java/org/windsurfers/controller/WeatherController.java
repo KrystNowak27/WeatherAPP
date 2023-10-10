@@ -1,26 +1,6 @@
 package org.windsurfers.controller;//package org.windsurfers.controller;
-//
-//import lombok.RequiredArgsConstructor;
-//import org.springframework.http.HttpStatus;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PathVariable;
-//import org.springframework.web.bind.annotation.RequestParam;
-//import org.springframework.web.bind.annotation.RestController;
-//import org.windsurfers.service.WeatherService;
-//
-//@RestController
-//@RequiredArgsConstructor
-//public class WeatherController {
-//    private final WeatherService service;
-//
-//
-//    @GetMapping(path = "/api/weather")
-//    public ResponseEntity<String> getWeather() {
-//        final String response = service.getWeather();
-//        return new ResponseEntity<>(response, HttpStatus.OK);
-//    }
-//}
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -28,28 +8,32 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.windsurfers.dto.WeatherDataDto;
 import org.windsurfers.dto.WeatherDto;
+
+
 import org.windsurfers.service.WeatherService;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/weather")
 public class WeatherController {
 
     private WeatherService weatherService;
 
+
     @Autowired
     public WeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
+
     }
 
-    @GetMapping("/cities")
-    public ResponseEntity<List<WeatherDataDto>> getWeatherForCities() {
-        List<WeatherDataDto> weatherData = weatherService.getWeatherForCities();
-        return new ResponseEntity<>(weatherData, HttpStatus.OK);
+    @GetMapping("/best-city")
+    public ResponseEntity<WeatherDataDto> getBestCityWeather(@RequestParam(required = false) String datetime) {
+        WeatherDataDto bestCityWeather = weatherService.getBestCityWeather(datetime);
+        return new ResponseEntity<>(bestCityWeather, HttpStatus.OK);
     }
-
-
-
 }
+
+
