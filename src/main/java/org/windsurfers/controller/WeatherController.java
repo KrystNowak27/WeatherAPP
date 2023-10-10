@@ -1,4 +1,4 @@
-package org.windsurfers.controller;//package org.windsurfers.controller;
+package org.windsurfers.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,13 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.windsurfers.dto.WeatherDataDto;
-import org.windsurfers.dto.WeatherDto;
+
 
 
 import org.windsurfers.service.WeatherService;
 
-import java.time.LocalDate;
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
