@@ -1,4 +1,4 @@
-package org.windsurfers.webclient.weather;
+package org.windsurfers.enums;
 
 public enum City {
     JASTARNIA("Jastarnia"),

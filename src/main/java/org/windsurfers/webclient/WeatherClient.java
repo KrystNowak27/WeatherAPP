@@ -1,9 +1,10 @@
-package org.windsurfers.webclient.weather;
+package org.windsurfers.webclient;
 
 import lombok.EqualsAndHashCode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.windsurfers.dto.WeatherDataDto;
+import org.windsurfers.enums.City;
 
 
 import java.util.ArrayList;

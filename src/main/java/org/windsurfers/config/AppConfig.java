@@ -1,4 +1,4 @@
-package org.windsurfers.service;
+package org.windsurfers.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
