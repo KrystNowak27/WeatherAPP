@@ -17,6 +17,7 @@ public class WeatherService {
     private final WeatherCalculator weatherCalculator;
     private final WeatherClient weatherClient;
 
+    //@RequireArgsConstructor
     @Autowired
     public WeatherService(WeatherCalculator weatherCalculator, WeatherClient weatherClient) {
         this.weatherCalculator = weatherCalculator;

@@ -13,7 +13,7 @@ public class AppConfig{
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
+// po co zakomentowany kod?
 //    @Bean
 //    public LocalDate localDate() {
 //        return LocalDate.parse("2023-10-10");

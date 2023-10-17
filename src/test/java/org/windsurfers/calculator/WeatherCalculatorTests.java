@@ -53,6 +53,7 @@ public class WeatherCalculatorTests {
 
     @BeforeEach
     void setUp() {
+        //po co przed kazdym testem przypisac jedne i te same wartosci w te same pola? nie lepiej zrobic to raz na samej gorze?
         weatherCalculator = new WeatherCalculator();
         date = "2023-10-10";
         temp = 10.0;

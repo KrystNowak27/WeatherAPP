@@ -41,6 +41,7 @@ class WeatherClientTests {
         MockitoAnnotations.initMocks(this);
     }
 
+    // idealny swiat nie istnieje :( test dla przypadku kiedy klient sie wywali
     @Test
     void getWeatherForCities_shouldReturnWeatherDataForAllCities() {
         // Given

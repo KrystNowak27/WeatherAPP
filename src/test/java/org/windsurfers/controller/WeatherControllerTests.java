@@ -65,7 +65,7 @@ public class WeatherControllerTests{
     @Test
     void testGetBestCityWeatherWithNullServiceResult() {
         // Given
-
+//ta wolna linijka po co?
         WeatherController weatherController = new WeatherController(weatherService);
 
         String datetime = "2023-10-01";
