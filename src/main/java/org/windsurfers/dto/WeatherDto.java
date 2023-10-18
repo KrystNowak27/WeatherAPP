@@ -1,17 +1,15 @@
 package org.windsurfers.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-import java.util.List;
 @Builder
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class WeatherDto{
         Double temp;
-        Double wind_spd;
+        @JsonProperty("wind_spd")
+        Double windSpeed;
         String datetime;
-
-
 }

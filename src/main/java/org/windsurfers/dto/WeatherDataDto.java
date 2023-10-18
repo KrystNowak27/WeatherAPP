@@ -1,17 +1,16 @@
 package org.windsurfers.dto;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-
-
 import java.util.List;
 
 @Builder
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class WeatherDataDto{
         List<WeatherDto> data;
-        String city_name;
+        @JsonProperty("city_name")
+        String cityName;
+        @JsonProperty("city_value")
         double cityValue;
 }

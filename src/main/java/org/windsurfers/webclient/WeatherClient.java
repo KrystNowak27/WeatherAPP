@@ -12,7 +12,6 @@ import java.util.List;
 
 
 @Component
-@EqualsAndHashCode
 public class WeatherClient {
 
     private static final String WEATHER_URL = "https://api.weatherbit.io/v2.0/forecast/daily?";

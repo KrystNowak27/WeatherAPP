@@ -7,8 +7,6 @@ public enum City {
     PISSOURI("Pissouri"),
     LE_MORNE("Le Morne");
 
-
-
     private final String cityName;
 
     City(String cityName) {

@@ -1,17 +1,14 @@
 package org.windsurfers.calculator;
 
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.test.context.event.annotation.BeforeTestMethod;
 import org.windsurfers.dto.WeatherDataDto;
 import org.windsurfers.dto.WeatherDto;
 import org.windsurfers.utils.WeatherCalculator;
 import org.windsurfers.webclient.WeatherClient;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,7 +40,7 @@ public class WeatherCalculatorTests {
         WeatherDto weatherDto = new WeatherDto();
         weatherDto.setDatetime(date);
         weatherDto.setTemp(temp);
-        weatherDto.setWind_spd(windSpeed);
+        weatherDto.setWindSpeed(windSpeed);
 
         weatherDataDto = new WeatherDataDto();
         weatherDataDto.setData(List.of(weatherDto));
@@ -86,7 +83,7 @@ public class WeatherCalculatorTests {
 
         // Then
         assertThat(result).isNotNull();
-        assertThat(result.getCity_name()).isEqualTo(weatherDataDto.getCity_name());
+        assertThat(result.getCityName()).isEqualTo(weatherDataDto.getCityName());
 
     }
 
